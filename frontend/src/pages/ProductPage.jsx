@@ -37,7 +37,6 @@ function ProductPage() {
         <h3>Cart: <span style={{ color: "red" }}>empty</span></h3>
       )}
       <button
-        style={{ color: "green", border: "1px solid green", margin: 10 }}
         onClick={() => addToCart(product)}
         disabled={!product.name}> {/* It remains disabled until it is loaded */}
         {product.name ? "Add to Cart" : "Loading..."}

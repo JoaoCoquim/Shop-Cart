@@ -5,7 +5,9 @@ import { CartContext } from '../context/cart.context';
 
 function CartPage() {
 
-  const { cart } = useContext(CartContext)
+  const { cart, clearCart } = useContext(CartContext)
+
+  // 3. Implementar Checkout (apenas mostra o total de itens)
 
   return (
     <div>
@@ -22,8 +24,20 @@ function CartPage() {
           ))}
         </ul>
       }
+
+      <button
+        onClick={clearCart}
+        style={{ color: "red", border: "1px solid red" }}
+      >
+        Clear Cart
+      </button>
+
+      <Link to={`/checkout`}>
+        <button style={{ color: "green", border: "1px solid green", margin: 10 }}>Proceed To Checkout</button>
+      </Link>
+
       <Link to={`/`}>
-        <button style={{ color: "orange", border: "1px solid orange" }}>Return to Products List</button>
+        <button style={{ color: "orange", border: "1px solid orange" }}>Return To Products List</button>
       </Link>
     </div>
   );
